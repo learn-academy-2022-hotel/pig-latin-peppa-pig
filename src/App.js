@@ -5,7 +5,7 @@ import butcherPigImage from './assets/butcherPig.jpeg'
 const App = () => {
 
   // ACTION ITEM: to make the development process easier there are some preassigned words in the input field, when you are ready for your full user experience delete the test words passed to useState and pass an empty string
-  const [userInput, setUserInput] = useState("apple through queen squeal fry fluent")
+  const [userInput, setUserInput] = useState("")
   const [inputTranslated, setInputTranslated] = useState("")
 
   // ACTION ITEM: the "myPigLatinCodeHere" function is where you will put your logic to translate the sentence entered by the user into Pig Latin
@@ -18,6 +18,7 @@ const App = () => {
     // NO MODIFICATION NEEDED: now that we have an array of words, we can map over the array and look at each word
     const translatedWordsArray = arrayOfUserInput.map(eachWord => {
       console.log("eachWord:", eachWord)
+    
 
       // NO MODIFICATION NEEDED: this code will look at each word and identify the vowels
       const vowelsArray = eachWord.split("").filter(vowel => {
@@ -30,8 +31,24 @@ const App = () => {
         )
       })
       console.log("vowelsArray:", vowelsArray)
-
+        //this is an array^ ["a", "p", "p", "l", "e"] eachWord= string of apple
       // ACTION ITEM: your Pig Latin logic goes here!
+//Pseudo code (words starting in vowels): 
+//Input: String of a word
+//Output: That word in pig latin
+//Process: the function is called firstLetterVowel and adds way to the end of the input. firstLetterVowel identifies words that have a vowel in the 0th index and concats "way" to the end of the word. .join(" ") 
+
+//use vowelsArray to find the first instance of vowels array (0th index) if finding vowelsArray in index 0, then append "way" to end of the word. .indexOf(vowelsArray)
+        //const way = ["w", "a", "y"]
+       
+        // const firstLetterVowel = (vowelsArray) => {
+          if (eachWord[0] === "a" ||
+          eachWord[0] === "e" ||
+          eachWord[0] === "i" ||
+          eachWord[0] === "o" ||
+          eachWord[0] === "u" ){
+            return eachWord.concat("way")
+          }
 
     
 
