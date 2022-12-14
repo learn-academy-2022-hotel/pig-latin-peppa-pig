@@ -39,17 +39,32 @@ const App = () => {
 //Process: the function is called firstLetterVowel and adds way to the end of the input. firstLetterVowel identifies words that have a vowel in the 0th index and concats "way" to the end of the word. .join(" ") 
 
 //use vowelsArray to find the first instance of vowels array (0th index) if finding vowelsArray in index 0, then append "way" to end of the word. .indexOf(vowelsArray)
-        //const way = ["w", "a", "y"]
        
-        // const firstLetterVowel = (vowelsArray) => {
           if (eachWord[0] === "a" ||
           eachWord[0] === "e" ||
           eachWord[0] === "i" ||
           eachWord[0] === "o" ||
           eachWord[0] === "u" ){
             return eachWord.concat("way")
-          }
+          } else if (eachWord[0] === "q" &&
+                    eachWord[1] === "u"){
+            return eachWord.substring(2).concat("quay")
+          } else if (eachWord[0] === "s" &&
+          eachWord[1] === "q" &&
+          eachWord[2] === "u"){
+            return eachWord.substring(3).concat("squay")
+          } else if (eachWord.lastIndexOf("y") &&
+                    eachWord.includes("a") === false
+                  
+                    )
+            return "yes"
 
+// Pseudocode: else if no vowels in the word but there's a y then take all the consonants before the y and append them to the end with ay
+
+
+          // input: string with qu as first letters
+          // output: string with first instance of vowel as the new beginning of the word and appends quay at the end of the new word
+          // Process: add else if statement where qu are in 0 and 1 or 1 and 2 index then concats removes them from the beginning
     
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
